@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    string str, enc, dec;
+    char key = 'm'; //clé de chiffrement
+    
+    str = "Notre distance est de 100m"; //valeur string de notre phrase à chiffrer
+    
+    for (int i = 0 ; i < str.size() ; i++)
+    {
+        
+        enc += str[i] ^ (int(key)+ i) % 20; 	// 	cryptage XOR (^) qui prends la clé de chiffrement en paramètre qui va etre la base du cryptage
+         
+    }
+
+    cout<< enc << endl; //affichage console du message crypté
+    
+    for (int i = 0 ; i < enc.size() ; i++)
+    {
+        dec += enc[i] ^ (int(key) + i) %20; 	//décryptage XOR (^) qui prends le message crypté (enc) et qui le décrypte 													avec la meme lettre de chiffrement
+    }
+    
+    cout << dec;  //affichage console du message décrypté
+}

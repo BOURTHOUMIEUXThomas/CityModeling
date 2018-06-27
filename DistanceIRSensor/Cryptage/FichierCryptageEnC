@@ -1,0 +1,20 @@
+void setup() {
+  Serial.begin(9600);
+  char* s = "La mesure est de 5m"; //valeur en brut qu'il vaut changer avec notre valeur qu'on récupère
+  int i;
+
+  Serial.println("\n"); //saut de ligne
+  Serial.println(s); //affiche le vrai char
+  for (i = 0; s[i] != '\0'; i++) {
+    Serial.print(char(s[i] + 1)); //cryptage
+  }
+  Serial.println("\n");
+
+  char* crypted = "Mb!nftvsf!ftu!ef!6n"; //valeur en brut qu'il vaut changer avec notre valeur qu'on récupère
+  Serial.println("\n");
+  Serial.println(crypted); //affiche le vrai char
+  for (i = 0; crypted[i] != '\0'; i++) { 
+    Serial.print(char(crypted[i] - 1)); //décryptage
+  }
+  Serial.println("\n");
+}
